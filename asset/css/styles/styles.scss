@@ -8,7 +8,7 @@ body {
   // font-family: "Noto Serif TC", serif; //標題
   font-family: "Montserrat", serif;
   font-family: "Noto Sans TC", serif;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 header {
@@ -126,7 +126,7 @@ header {
 }
 
 main {
-  //banner
+  //banner-------------------------------------
   section.banner_area {
     width: 100%;
     position: relative;
@@ -152,6 +152,114 @@ main {
       }
       100% {
         transform: scale(1);
+      }
+    }
+  }
+  //活動banner---------------------------------
+  section.activity_banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    div {
+      width: 80%;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  //經典選品---------------------------------------
+  section.classic_area {
+    padding: 40px 8vw;
+    //標題
+    div.title {
+      display: flex;
+      justify-content: start;
+      align-items: end;
+      padding: 50px 0;
+      h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+        font-weight: 600;
+        font-family: "Noto Serif TC", serif; //標題
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1rem;
+        font-weight: 300;
+        padding-left: 10px;
+        border-left: 1px solid #606060;
+        margin-left: 10px;
+      }
+    }
+    //商品
+    div[class^="item-area"] {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px; //間距
+      margin-bottom: 10px;
+      .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .show_area {
+          position: relative;
+          img {
+            width: 100%;
+          }
+          img.hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: 0.5s ease-in-out;
+            &:hover {
+              opacity: 1;
+            }
+          }
+          h4.tag {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 5px 2rem;
+          }
+        }
+        .info {
+          padding: 20px 0;
+          h3 {
+            font-weight: normal;
+          }
+          p {
+            color: #656565;
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+    .item-area1 {
+      .item {
+        // width: 50%;
+      }
+    }
+    //按鈕
+    div.btn {
+      padding: 80px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #000000;
+        padding: 10px 2rem;
+        transition: 0.5s ease-in-out;
+        &:hover {
+          background-color: #622d2d;
+        }
       }
     }
   }
