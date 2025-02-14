@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -112,4 +112,124 @@ header div.right div p {
 }
 header a {
   transition: 0.5s ease-in-out;
+}
+
+main section.banner_area {
+  width: 100%;
+  position: relative;
+  max-height: 95vh;
+  overflow: hidden;
+}
+main section.banner_area img.banner-img {
+  width: 100%;
+  animation: banner 5s;
+}
+main section.banner_area div.text_logo {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+main section.banner_area div.text_logo img {
+  transform: scale(0.9);
+}
+@keyframes banner {
+  0% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+footer {
+  background-color: #ffffff;
+  padding: 0 80px 20px 80px;
+}
+footer div.top {
+  display: flex;
+  justify-content: space-between;
+}
+footer div.top div.left section {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0 80px;
+}
+footer div.top div.left section img {
+  width: 200px;
+}
+footer div.top div.left section article {
+  border-left: 1px solid #656565;
+  padding: 0 20px;
+}
+footer div.top div.left div {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+footer div.top div.left div a {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  border: #c9c9c9 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+footer div.top div.left div a i {
+  font-size: large;
+}
+footer div.top div.left div a:hover {
+  border: #656565 1px solid;
+}
+footer div.top div.left a,
+footer div.top div.left p {
+  text-decoration: none;
+  color: #656565;
+  font-size: 0.9rem;
+}
+footer div.top div.left p {
+  padding-bottom: 10px;
+}
+footer div.top div.right {
+  margin-top: 20px;
+}
+footer div.top div.right nav ul {
+  display: flex;
+  gap: 20px;
+}
+footer div.top div.right nav ul li {
+  list-style: none;
+}
+footer div.top div.right nav ul li p {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+footer div.top div.right nav ul li ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+footer div.top div.right nav ul li ul li a {
+  text-decoration: none;
+  color: #656565;
+  font-size: 0.9rem;
+  transition: 0.5s ease-in-out;
+}
+footer div.top div.right nav ul li ul li a:hover {
+  color: #000000;
+}
+footer div.bottom {
+  padding-top: 50px;
+  display: flex;
+  gap: 20px;
+}
+footer div.bottom a,
+footer div.bottom p {
+  text-decoration: none;
+  color: #656565;
+  font-size: 0.9rem;
 }/*# sourceMappingURL=styles.css.map */
