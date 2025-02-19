@@ -91,27 +91,64 @@ header div.left nav ul.navi li.dropdown ul.dropdown li a {
 header div.left nav ul.navi li.dropdown ul.dropdown li a:hover {
   color: #000000;
 }
-header div.right div {
+header div.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+header div.right div.member {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-header div.right div a {
+header div.right div.member a {
   text-decoration: none;
   color: #ffffff;
   font-size: 1rem;
   transition: 0.5s ease-in-out;
 }
-header div.right div a:hover {
+header div.right div.member a:hover {
   color: #717171;
 }
-header div.right div p {
+header div.right div.member p {
   color: #717171;
   font-size: 0.75rem;
   padding: 0 10px;
 }
+header div.right div.menu_btn {
+  height: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+header div.right div.menu_btn span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: 0.5s ease-in-out;
+}
 header a {
   transition: 0.5s ease-in-out;
+}
+@media screen and (max-width: 1000px) {
+  header div.left nav {
+    display: none;
+  }
+  header div.right div.menu_btn {
+    display: flex;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 500px) {
+  header {
+    padding: 0 20px;
+  }
+  header div.right div.member {
+    display: none;
+  }
 }
 
 main section.banner_area {
@@ -141,6 +178,20 @@ main section.banner_area div.text_logo img {
     transform: scale(1);
   }
 }
+@media screen and (max-width: 850px) {
+  main section.banner_area {
+    min-height: 60vh;
+  }
+  main section.banner_area img.banner-img {
+    height: 60vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main section.banner_area div.text_logo img {
+    width: 100%;
+    transform: scale(1);
+  }
+}
 main section.activity_banner {
   width: 100%;
   display: flex;
@@ -154,6 +205,11 @@ main section.activity_banner div {
 }
 main section.activity_banner div img {
   width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  main section.activity_banner div {
+    width: 100%;
+  }
 }
 main section.classic_area {
   padding: 40px 8vw;
@@ -239,6 +295,333 @@ main section.classic_area div.btn a {
 main section.classic_area div.btn a:hover {
   background-color: #622d2d;
 }
+@media screen and (max-width: 990px) {
+  main section.classic_area div[class^=item-area] {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+main section.technology_area {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-bottom: 80px;
+}
+main section.technology_area article.container1 {
+  display: grid;
+  grid-template-columns: 4fr 5fr;
+  grid-template-rows: 1fr 1fr 4fr 1fr;
+  gap: 10px;
+  grid-template-areas: "logo img" "logo_text img" "h1 img" "p img";
+}
+main section.technology_area article.container1 div.grid-logo {
+  grid-area: logo;
+}
+main section.technology_area article.container1 div.grid-logo img {
+  width: 50%;
+}
+main section.technology_area article.container1 div.grid-logo_text {
+  grid-area: logo_text;
+  color: #656565;
+}
+main section.technology_area article.container1 div.grid-logo_text h3 {
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+}
+main section.technology_area article.container1 div.grid-h1 {
+  grid-area: h1;
+  writing-mode: vertical-lr;
+  text-align: end;
+}
+main section.technology_area article.container1 div.grid-h1 .grid-h1-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.5rem;
+  font-family: "Noto Serif TC", serif;
+}
+main section.technology_area article.container1 div.grid-p {
+  grid-area: p;
+  color: #656565;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 10px;
+}
+main section.technology_area article.container1 div.grid-img {
+  grid-area: img;
+}
+main section.technology_area article.container1 div.grid-img img {
+  width: 100%;
+}
+main section.technology_area article.container2 {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: 5fr 1fr;
+  gap: 10px;
+  grid-template-areas: "img h1" "img p";
+}
+main section.technology_area article.container2 div.grid-img {
+  grid-area: img;
+}
+main section.technology_area article.container2 div.grid-img img {
+  width: 100%;
+}
+main section.technology_area article.container2 div.grid-h1 {
+  grid-area: h1;
+  writing-mode: vertical-lr;
+  text-align: end;
+}
+main section.technology_area article.container2 div.grid-h1 .grid-h1-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.5rem;
+  font-family: "Noto Serif TC", serif;
+}
+main section.technology_area article.container2 div.grid-p {
+  grid-area: p;
+  color: #656565;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 10px;
+}
+main section.technology_area article.container3 {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  grid-template-rows: 3fr 1fr 1fr;
+  gap: 10px;
+  grid-template-areas: "h1 img" "p img" "btn img";
+}
+main section.technology_area article.container3 div.grid-h1 {
+  grid-area: h1;
+  writing-mode: vertical-lr;
+  text-align: end;
+}
+main section.technology_area article.container3 div.grid-h1 .grid-h1-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.5rem;
+  font-family: "Noto Serif TC", serif;
+}
+main section.technology_area article.container3 div.grid-p {
+  grid-area: p;
+  color: #656565;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 10px;
+}
+main section.technology_area article.container3 div.grid-btn {
+  grid-area: btn;
+  position: relative;
+}
+main section.technology_area article.container3 div.grid-btn a {
+  position: absolute;
+  bottom: 0;
+  text-decoration: none;
+  color: grey;
+  border: grey 1px solid;
+  padding: 10px 2rem;
+  transition: 0.5s ease-in-out;
+}
+main section.technology_area article.container3 div.grid-btn a:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+main section.technology_area article.container3 div.grid-img {
+  grid-area: img;
+}
+main section.technology_area article.container3 div.grid-img img {
+  width: 100%;
+}
+@media screen and (max-width: 1000px) {
+  main section.technology_area article.container1,
+  main section.technology_area article.container2,
+  main section.technology_area article.container3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  main section.technology_area div[class^=grid-].grid-logo img {
+    width: 100%;
+  }
+  main section.technology_area div[class^=grid-].grid-h1 {
+    text-align: center;
+  }
+  main section.technology_area div[class^=grid-].grid-h1 .grid-h1-text {
+    display: flex;
+    flex-direction: row;
+  }
+  main section.technology_area div[class^=grid-].grid-h1 .grid-h1-text h1,
+  main section.technology_area div[class^=grid-].grid-h1 .grid-h1-text h2 {
+    writing-mode: horizontal-tb;
+    font-size: 1.5rem;
+  }
+  main section.technology_area div[class^=grid-].grid-p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  main section.technology_area div[class^=grid-].grid-img img {
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main section.technology_area div[class^=grid-].grid-btn {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 500px) {
+  main section.technology_area div[class^=grid-].grid-logo_text h3 {
+    letter-spacing: 0rem;
+    font-size: 0.9rem;
+  }
+  main section.technology_area div[class^=grid-].grid-h1 .grid-h1-text h1,
+  main section.technology_area div[class^=grid-].grid-h1 .grid-h1-text h2 {
+    font-size: 1rem;
+    letter-spacing: 0rem;
+  }
+  main section.technology_area div[class^=grid-].grid-p p {
+    font-size: 0.75rem;
+  }
+}
+main section.banner_area2 {
+  width: 100%;
+  position: relative;
+  max-height: 650px;
+  overflow: hidden;
+}
+main section.banner_area2 img.banner2-img {
+  width: 100%;
+  animation: banner 5s;
+}
+main section.banner_area2 div.text_area {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+main section.banner_area2 div.text_area .text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  padding: 30px 0;
+}
+main section.banner_area2 div.text_area .text .text-p {
+  display: flex;
+}
+main section.banner_area2 div.text_area .text .text-p p {
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+  color: #636363;
+}
+main section.banner_area2 div.text_area .text .text-p p span {
+  color: #232323;
+  font-weight: 500;
+}
+main section.banner_area2 div.text_area .text div.btn {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main section.banner_area2 div.text_area .text div.btn a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #434343;
+  padding: 10px 2rem;
+  transition: 0.5s ease-in-out;
+}
+main section.banner_area2 div.text_area .text div.btn a:hover {
+  background-color: #622d2d;
+}
+@media screen and (max-width: 500px) {
+  main section.banner_area2 {
+    max-height: 500px;
+  }
+  main section.banner_area2 img.banner2-img {
+    height: 500px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  main section.banner_area2 div.text_area .text .text-p p {
+    font-size: 1rem;
+  }
+}
+main section.other_info {
+  display: flex;
+  flex: 1 1 450px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px;
+  gap: 20px;
+}
+main section.other_info article {
+  width: 450px;
+  position: relative;
+}
+main section.other_info article a.item_img {
+  text-decoration: none;
+  color: #000000;
+}
+main section.other_info article a.item_img img {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main section.other_info article .text_area {
+  width: 200px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+}
+main section.other_info article .text_area h1 {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+main section.other_info article .text_area p {
+  color: #7e7e7e;
+  padding-top: 10px;
+}
+main section.other_info article .text_area div.btn {
+  padding-top: 50px;
+}
+main section.other_info article .text_area div.btn a {
+  text-decoration: none;
+  color: grey;
+  outline: grey 1px solid;
+  padding: 10px 2rem;
+  transition: 0.5s ease-in-out;
+}
+main section.other_info article .text_area div.btn a:hover {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+@media screen and (max-width: 1017px) {
+  main section.other_info article {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+  }
+  main section.other_info article .text_area {
+    right: 8vw;
+  }
+}
 
 footer {
   position: relative;
@@ -316,6 +699,7 @@ footer div.top div.right nav ul li ul li a {
   text-decoration: none;
   color: #656565;
   font-size: 0.9rem;
+  font-weight: 300;
   transition: 0.5s ease-in-out;
 }
 footer div.top div.right nav ul li ul li a:hover {
@@ -337,4 +721,110 @@ footer .top_btn {
   bottom: 100px;
   right: 100px;
   cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  footer div.top {
+    flex-direction: column;
+    justify-content: center;
+  }
+  footer div.top .left {
+    border-bottom: #c3c3c3 1px solid;
+    padding-bottom: 20px;
+  }
+  footer div.top .left section.logo {
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer div.top .left section.logo article {
+    display: none;
+  }
+  footer div.top .left div {
+    justify-content: center;
+  }
+  footer div.top .left a,
+  footer div.top .left p {
+    text-align: center;
+  }
+  footer div.top .right {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  footer div.bottom {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  footer div.bottom p {
+    font-size: 0.75rem;
+    color: #a7a7a7;
+  }
+}
+
+aside.menu {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  width: 65vw;
+  min-width: 300px;
+  padding: 20px 0;
+  background-color: #ffffff;
+  box-shadow: #232323 0px 0px 10px;
+  transition: 0.5s ease-in-out;
+}
+aside.menu .top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+aside.menu .top .close_btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  color: #6e6e6e;
+}
+aside.menu .top .close_btn i {
+  font-size: 1.5rem;
+  transition: 0.5s ease-in-out;
+}
+aside.menu .top .close_btn p {
+  font-size: 0.9rem;
+}
+aside.menu .top .close_btn:hover i {
+  transform: rotate(180deg);
+}
+aside.menu nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+aside.menu nav ul li {
+  list-style: none;
+  border-bottom: #c9c9c9 1px solid;
+  padding: 10px 50px;
+}
+aside.menu nav ul li a {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: 0.5s ease-in-out;
+}
+aside.menu nav ul li a:hover {
+  color: #717171;
+}
+aside.menu nav ul li ul.dropdown {
+  display: none;
+}
+aside.menu nav ul li ul.dropdown li {
+  border-bottom: none;
 }/*# sourceMappingURL=styles.css.map */

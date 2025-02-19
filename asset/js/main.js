@@ -12,24 +12,56 @@ $(function () {
 const header = document.getElementById("header");
 const navLogo = document.getElementById("navLogo");
 const links = header.getElementsByTagName("a"); //取得所有連結<a>元素
+const lines = document.getElementsByClassName("line"); //取得菜單所有線段元素
 const originalLogoSrc = "./asset/img/logo-white.webp"; //原始logo
 const scrolledLogoSrc = "./asset/img/logo-black.webp"; //滾動後logo
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    // 當滾動超過50px時
-    header.style.backgroundColor = "#ffffff"; // 將背景色設為白色
-    header.style.padding = "0 50px"; // padding
-    for (let link of links) {
-      link.style.color = "#000000";
+  if (window.innerWidth < 600) {
+    // 小螢幕時的滾動效果
+    if (window.scrollY > 50) {
+      header.style.backgroundColor = "#ffffff";
+      // header.style.padding = "0 20px"; // 小螢幕時的 padding
+      navLogo.src = scrolledLogoSrc;
+      for (let link of links) {
+        link.style.color = "#000000";
+      }
+      for (let line of lines) {
+        line.style.backgroundColor = "#000000";
+      }
+    } else {
+      header.style.backgroundColor = "#000000";
+      // header.style.padding = "0 40px"; // 小螢幕時的 padding
+      navLogo.src = originalLogoSrc;
+      for (let link of links) {
+        link.style.color = "#ffffff";
+      }
+      for (let line of lines) {
+        line.style.backgroundColor = "#ffffff";
+      }
     }
-    navLogo.src = scrolledLogoSrc; // 更換logo
   } else {
-    header.style.backgroundColor = "#000000"; // 恢復為黑色
-    header.style.padding = "0 80px"; // padding
-    navLogo.src = originalLogoSrc; // 恢復原始logo
-    for (let link of links) {
-      link.style.color = "#ffffff";
+    // 大螢幕時的滾動效果
+    if (window.scrollY > 50) {
+      header.style.backgroundColor = "#ffffff";
+      header.style.padding = "0 50px";
+      navLogo.src = scrolledLogoSrc;
+      for (let link of links) {
+        link.style.color = "#000000";
+      }
+      for (let line of lines) {
+        line.style.backgroundColor = "#000000";
+      }
+    } else {
+      header.style.backgroundColor = "#000000";
+      header.style.padding = "0 80px";
+      navLogo.src = originalLogoSrc;
+      for (let link of links) {
+        link.style.color = "#ffffff";
+      }
+      for (let line of lines) {
+        line.style.backgroundColor = "#ffffff";
+      }
     }
   }
 });
