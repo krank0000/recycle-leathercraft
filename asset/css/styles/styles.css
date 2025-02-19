@@ -241,6 +241,7 @@ main section.classic_area div.btn a:hover {
 }
 
 footer {
+  position: relative;
   background-color: #ffffff;
   padding: 0 80px 20px 80px;
 }
@@ -330,4 +331,10 @@ footer div.bottom p {
   text-decoration: none;
   color: #656565;
   font-size: 0.9rem;
+}
+footer .top_btn {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */

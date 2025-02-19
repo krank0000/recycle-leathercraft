@@ -259,7 +259,17 @@
         <p>建議使用Chrome、Firefox、Safari最新版本瀏覽</p>
         <p>採用全球最先進SSL 256bit 傳輸加密機制</p>
       </div>
+      <!-- 置頂按鈕 -->
+      <div class="top_btn" id="topBtn">
+        <i class="fas fa-chevron-up"></i>
+      </div>
     </footer>
+    <script>
+      // 點擊置頂按鈕時平滑捲動回頁面頂部
+      document.getElementById("topBtn").onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+    </script>
     <!-- JS -->
     <script src="./asset/js/main.js"></script>
   </body>

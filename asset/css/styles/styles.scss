@@ -266,6 +266,7 @@ main {
 }
 
 footer {
+  position: relative;
   background-color: #ffffff;
   padding: 0 80px 20px 80px;
   div.top {
@@ -361,5 +362,12 @@ footer {
       color: #656565;
       font-size: 0.9rem;
     }
+  }
+  // 置頂按鈕
+  .top_btn {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    cursor: pointer;
   }
 }
