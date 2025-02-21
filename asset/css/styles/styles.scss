@@ -333,7 +333,7 @@ main {
   }
   //工藝-----------------------------------------
   section.technology_area {
-    padding: 40px;
+    padding: 5vw;
     display: flex;
     flex-direction: column;
     gap: 80px; //間距
@@ -560,11 +560,15 @@ main {
   section.banner_area2 {
     width: 100%;
     position: relative;
-    max-height: 650px;
+    // max-height: 650px;
     overflow: hidden;
-    img.banner2-img {
+    .banner2-img {
       width: 100%;
+      height: 650px;
       animation: banner 5s;
+      background-image: url("../../img/0813all-pr-ph.webp");
+      background-size: cover;
+      background-position: center;
     }
     div.text_area {
       position: absolute;
@@ -613,9 +617,8 @@ main {
     //RWD======================================
     @media screen and (max-width: 500px) {
       max-height: 500px;
-      img.banner2-img {
+      .banner2-img {
         height: 500px;
-        object-fit: cover;
       }
       div.text_area {
         .text {
@@ -842,6 +845,9 @@ footer {
         color: #a7a7a7;
       }
     }
+    .top_btn {
+      right: 5vw;
+    }
   }
 }
 
@@ -897,6 +903,7 @@ aside.menu {
         a {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           text-decoration: none;
           color: #000000;
           font-size: 1rem;
@@ -904,6 +911,14 @@ aside.menu {
           transition: 0.5s ease-in-out;
           &:hover {
             color: #717171;
+          }
+          //下拉箭頭
+          & i {
+            transition: 0.5s ease-in-out;
+            //點擊增加樣式
+            &.active {
+              transform: rotate(180deg);
+            }
           }
         }
         ul.dropdown {
